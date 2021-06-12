@@ -19,7 +19,6 @@ pipeline {
     }
 	post {
 	
-	
 	always {
 	emailext body: 'Test mail', subject: 'Pipeline report', to: 'akshay.learn2021@gmail.com'
 	}
