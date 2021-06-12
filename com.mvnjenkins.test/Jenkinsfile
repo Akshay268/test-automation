@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Build stage'
+            }
+        }
+            stage('Test') {
+            steps {
+                echoo 'Test stage'
+            }
+            }
+            stage('Deploy') {
+            steps {
+                echo 'Deploy stage'
+            }
+            }
+    }
+	
+	post {
+	
+	
+	always {
+	emailext body: 'Test mail', subject: 'Pipeline report', to: 'akshay.learn2021@gmail.com'
+	}
+	}
+}
